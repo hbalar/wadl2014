@@ -19,6 +19,8 @@ Depot1::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
+  config.action_mailer.delivery_method = :smtp | :sendmail | :test
+
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH

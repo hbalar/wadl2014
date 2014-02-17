@@ -28,10 +28,23 @@ Depot1::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   config.active_record.auto_explain_threshold_in_seconds = 0.5
+  config.action_mailer.delivery_method = :smtp | :sendmail | :test
+
 
   # Do not compress assets
   config.assets.compress = false
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.action_mailer.delivery_method = :test
+  config.action_mailer.smtp_settings = {:address=> "smtp.gmail.com",:port=> 587,
+                                        :domain=> "domain.of.sender.net",
+                                        :authentication => "plain",
+                                        :user_name=> "harikbalar102",
+                                        :password=> "balar123",
+                                        :enable_starttls_auto => true
+                                        }
+
+
 end
